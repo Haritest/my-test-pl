@@ -7,7 +7,18 @@ try {
     stage('checkout') {
         cleanWs()
         checkout scm
+withCredentials([string(credentialsId: 'Test-text', variable: '')]) {
+    // some block
+     sh  '''
+                vaultpasswordfile="vault_pass.txt"
+                echo $Test-text > $vaultpasswordfile
+	'''
+
 }
+
+
+}
+
 
 
 
