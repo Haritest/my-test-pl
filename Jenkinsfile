@@ -7,11 +7,11 @@ try {
     stage('checkout') {
         cleanWs()
         checkout scm
-withCredentials([string(credentialsId: 'Test-text', variable: '')]) {
+withCredentials([string(credentialsId: 'Test-text', variable: 'vaultpass')]) {
     // some block
      sh  '''
                 vaultpasswordfile="vault_pass.txt"
-                echo $Test-text > $vaultpasswordfile
+                echo $vaultpass > $vaultpasswordfile
 	'''
 
 }
