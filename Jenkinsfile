@@ -12,6 +12,7 @@ withCredentials([string(credentialsId: 'Test-text', variable: 'vaultpass')]) {
      sh  '''
                 vaultpasswordfile="vault_pass.txt"
                 echo $vaultpass > $vaultpasswordfile
+		cat vault_pass.txt
 	'''
 
 }
