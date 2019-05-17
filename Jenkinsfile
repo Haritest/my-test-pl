@@ -10,8 +10,7 @@ try {
 withCredentials([string(credentialsId: 'Test-text', variable: 'vaultpass')]) {
     // some block
      sh  '''
-                vaultpasswordfile="vault_pass.txt"
-                echo $vaultpass > $vaultpasswordfile
+                echo $vaultpass > vault_pass.txt
 		cat vault_pass.txt
 		pwd
 	'''
